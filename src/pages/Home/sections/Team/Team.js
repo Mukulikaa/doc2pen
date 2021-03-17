@@ -1,6 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import styles from './Team.module.css';
-import {FaGithub, FaLinkedinIn} from 'react-icons/fa';
+import {FaGithub} from 'react-icons/fa';
+import Lottie from 'lottie-react-web'
+import GithubAnimation from '../../../../assets/lotties/github.json'
+import LinkedinAnimation from '../../../../assets/lotties/linkedin.json'
 import smaranjitLarge from '../../../../assets/images/team/smaranjit_ghose_large.webp';
 import anushLarge from '../../../../assets/images/team/anush_bhatia_large.webp';
 import smaranjitSmall from "../../../../assets/images/team/smaranjit_ghose_small.webp";
@@ -43,6 +46,12 @@ function Team() {
         })
       }, []);
 
+      useEffect(() => {
+        window.addEventListener('keydown', (event) => {
+          // ...
+        });
+      }, []);
+
     return (
         <div className={styles.Team} id="home_team">
             {/* <!-- Project Maintainer Sub Section --> */}
@@ -51,25 +60,37 @@ function Team() {
                 {
                     maintainerSection.map(item =>
                       (
-                      <div className={`${styles[item.imgclass]} ${styles.centeralign}`} key={item.name}>
+                      <div /*className={`${styles[item.imgclass]} ${styles.centeralign}`} key={item.name}*/>
                       <div className={styles.profile_container}>
                         <div className={styles.profile_wrapper}>
-                          <div className={styles.profile_card}>
-                          <img srcSet={`${item.imageSmall} 1x, ${item.imageLarge} 2x`} src={item.imageSmall} alt="profile pics"/> 
-                          <h4>{item.name}</h4>
-                          <h5>{item.title}</h5>
-                          <div className={styles.icons}>
-                            <a href={item.github} target="_blank" rel="noreferrer"><FaGithub /></a>
-                            <a href={item.linkedin} target="_blank" rel="noreferrer"><FaLinkedinIn /></a>
-                          </div> 
-                          </div>
+                        
                         </div>
+                        
                       </div>
+                      <div className={styles.profile_card}>
+                        <h4>{item.name}</h4>
+                        <h5>{item.title}</h5>
+                          <div className={styles.icons}>
+                            <a href={item.github} target="_blank" rel="noreferrer">
+                              <Lottie 
+                              options={{
+                                animationData: GithubAnimation
+                              }}/>
+                            </a>
+                            <a href={item.linkedin} target="_blank" rel="noreferrer" onMouseEnter>
+                              <Lottie 
+                                options={{
+                                  animationData: LinkedinAnimation
+                                }}/>
+                            </a>
+                          </div> 
+                        </div>
                       </div>))
                 }
-            </div>
+        
+                </div>
             
-            {/* <!-- Contributora Sub Section --> */}
+            {/* <!-- Contributors Sub Section --> */}
             <br/><br/>
             <h3>Clan of Contributors</h3><br/><br/>
             <div className={styles.team_container}>
