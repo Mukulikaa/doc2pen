@@ -16,7 +16,7 @@ function Team() {
 
     useEffect(() => {
       Aos.init({
-        duration: 800,
+        duration: 1000,
         delay: 1000
       })
     }, []);
