@@ -50,7 +50,7 @@
     padding-bottom: 20px;
 }
 
-.image_1 .profile_container::before {
+/*.image_1 .profile_container::before {
     background: url("../../../../assets/images/team/smaranjit_ghose_small.webp") no-repeat center;
     background-size: cover;
 }
@@ -58,7 +58,7 @@
 .image_2 .profile_container::before {
     background: url("../../../../assets/images/team/anush_bhatia_small.webp") no-repeat center;
     background-size: cover;
-}
+}*/
   
 .profile_container:hover:before {
     opacity: 0;

@@ -1,9 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import styles from './Team.module.css';
 import {FaGithub} from 'react-icons/fa';
-import Lottie from 'lottie-react-web'
-import GithubAnimation from '../../../../assets/lotties/github.json'
-import LinkedinAnimation from '../../../../assets/lotties/linkedin.json'
+import Lottie from 'lottie-react-web';
+import GithubAnimation from '../../../../assets/lotties/github.json';
+import LinkedinAnimation from '../../../../assets/lotties/linkedin.json';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 import smaranjitLarge from '../../../../assets/images/team/smaranjit_ghose_large.webp';
 import anushLarge from '../../../../assets/images/team/anush_bhatia_large.webp';
 import smaranjitSmall from "../../../../assets/images/team/smaranjit_ghose_small.webp";
@@ -11,6 +13,13 @@ import anushSmall from "../../../../assets/images/team/anush_bhatia_small.webp";
 
 
 function Team() {
+
+    useEffect(() => {
+      Aos.init({
+        duration: 2500,
+        delay: 1000
+      })
+    }, []);
 
     const maintainerSection = [
         {
@@ -60,12 +69,11 @@ function Team() {
                 {
                     maintainerSection.map(item =>
                       (
-                      <div /*className={`${styles[item.imgclass]} ${styles.centeralign}`} key={item.name}*/>
+                      <div data-aos="fade-up">
                       <div className={styles.profile_container}>
                         <div className={styles.profile_wrapper}>
-                        
-                        </div>
-                        
+                          <img src={item.imageLarge} className={`${styles[item.imgclass]} ${styles.centeralign}`} key={item.name} alt="Maintainers"/>
+                        </div>  
                       </div>
                       <div className={styles.profile_card}>
                         <h4>{item.name}</h4>
