@@ -16,7 +16,7 @@ function Team() {
 
     useEffect(() => {
       Aos.init({
-        duration: 2500,
+        duration: 800,
         delay: 1000
       })
     }, []);
@@ -69,10 +69,10 @@ function Team() {
                 {
                     maintainerSection.map(item =>
                       (
-                      <div data-aos="fade-up">
+                      <div data-aos="fade-up" >
                       <div className={styles.profile_container}>
                         <div className={styles.profile_wrapper}>
-                          <img src={item.imageLarge} className={`${styles[item.imgclass]} ${styles.centeralign}`} key={item.name} alt="Maintainers"/>
+                          <img src={item.imageLarge} alt="Maintainers"/>
                         </div>  
                       </div>
                       <div className={styles.profile_card}>

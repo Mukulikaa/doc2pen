@@ -71,6 +71,12 @@
     position: relative;
   }
   
+  .profile_wrapper img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
   .profile_wrapper::before {
     content: "";
     position: absolute;
